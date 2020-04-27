@@ -12,91 +12,97 @@ const bcrypt = require("bcrypt");
 const bcryptSalt = 10;
 
 router.get("/signup", (req, res, next) => {
-    res.render("auth/signup");
+  res.render("auth/signup");
 });
+
+// getting info from the form username and password
 
 router.post("/signup", (req, res, next) => {
-    const username = req.body.username;
-    const password = req.body.password;
+  const username = req.body.username;
+  const password = req.body.password;
 
-    if (username === "" || password === "") {
+  if (username === "" || password === "") {
+    res.render("auth/signup", {
+      message: "Please enter a username and a password",
+    });
+    return;
+  } else if (username === "") {
+    res.render("auth/signup", {
+      message: "Please enter a username",
+    });
+    return;
+  } else if (password === "") {
+    res.render("auth/signup", {
+      message: "Please enter a password",
+    });
+    return;
+  }
+
+  // if it allready existsts
+
+  User.findOne({ username })
+    .then((user) => {
+      if (user !== null) {
         res.render("auth/signup", {
-            message: "Please enter a username and a password"
+          message: "The username already exists",
         });
         return;
-    } else if (username === "") {
-        res.render("auth/signup", {
-            message: "Please enter a username"
-        });
-        return;
-    } else if (password === "") {
-        res.render("auth/signup", {
-            message: "Please enter a password"
-        });
-        return;
-    }
+      }
 
-    User.findOne({ username })
-        .then(user => {
-            if (user !== null) {
-                res.render("auth/signup", {
-                    message: "The username already exists"
-                });
-                return;
-            }
+      const salt = bcrypt.genSaltSync(bcryptSalt);
+      const hashPass = bcrypt.hashSync(password, salt);
 
-            const salt = bcrypt.genSaltSync(bcryptSalt);
-            const hashPass = bcrypt.hashSync(password, salt);
+      const newUser = new User({
+        username,
+        password: hashPass,
+      });
 
-            const newUser = new User({
-                username,
-                password: hashPass
-            });
-
-            newUser.save(err => {
-                if (err) {
-                    res.render("auth/signup", {
-                        message: "Something went wrong"
-                    });
-                } else {
-                    res.redirect("/");
-                }
-            });
-        })
-        .catch(error => {
-            next(error);
-        });
+      newUser.save((err) => {
+        if (err) {
+          res.render("auth/signup", {
+            message: "Something went wrong",
+          });
+        } else {
+          // privat page !
+          res.redirect("/private");
+        }
+      });
+    })
+    .catch((error) => {
+      next(error);
+    });
 });
 router.get("/login", (req, res, next) => {
-    res.render("auth/login", { message: req.flash("error") });
+  res.render("auth/login", { message: req.flash("error") });
+});
+
+router.get("/login", (req, res, next) => {
+  res.render("auth/login", { message: req.flash("error") });
 });
 
 router.post(
-    "/login",
-    passport.authenticate("local", {
-        successRedirect: "/",
-        failureRedirect: "/login",
-        failureFlash: true,
-        passReqToCallback: true
-    })
+  "/login",
+  passport.authenticate("local", {
+    // private page
+    successRedirect: "/private",
+    failureRedirect: "/login",
+    failureFlash: true,
+    passReqToCallback: true,
+  })
 );
 
 router.get("/logout", (req, res) => {
-    req.logout();
-    res.redirect("/login");
+  req.logout();
+  res.redirect("/login");
 });
 
-router.get("/private-page", ensureLogin.ensureLoggedIn(), (req, res) => {
-    res.render("private", { user: req.user });
+router.get("/account-settings", (req, res) => {
+  res.render("account-settings");
 });
 
-router.get("/auth/slack", passport.authenticate("slack"));
-router.get(
-    "/auth/slack/callback",
-    passport.authenticate("slack", {
-        successRedirect: "/private-page",
-        failureRedirect: "/" // here you would navigate to the classic login page
-    })
-);
+// work on this
+router.get("/private", ensureLogin.ensureLoggedIn(), (req, res) => {
+  res.render("private", { user: req.user });
+});
 
 module.exports = router;

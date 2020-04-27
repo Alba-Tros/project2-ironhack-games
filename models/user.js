@@ -8,6 +8,7 @@ const userSchema = new Schema(
         githubID: String
     },
     {
+        // also using for the Game Modell automatic created date
         timestamps: { createdAt: "created_at", updatedAt: "updated_at" }
     }
 );

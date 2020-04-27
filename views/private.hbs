@@ -1,10 +1,22 @@
+<h1>Hi {{user.username}} ! You are logged in</h1>
+
+<h2>Where do you want to go ?</h2>
+<p>
+  <button><a href="/account-settings">Your account</a></button>
+  <button><a href="/signup">Create account</a></button>
+</p>
+<button><a href="/login">Log In</a></button>
+<button>
+  <a href="/auth/slack">Login With Slack</a>
+</button>
+
 Private page
 {{#if user}}
-  <div>
-    <a href="/">Index</a>
-  </div>
+<div>
+  <a href="/">Index</a>
+</div>
 {{/if}}
 
-  <p class="link-logout">
-    <a href="/logout">Log out</a>
-  </p>
+<p class="link-logout">
+  <a href="/logout">Log out</a>
+</p>
