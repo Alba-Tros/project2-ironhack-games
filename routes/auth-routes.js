@@ -90,13 +90,4 @@ router.get("/private-page", ensureLogin.ensureLoggedIn(), (req, res) => {
     res.render("private", { user: req.user });
 });
 
-router.get("/auth/slack", passport.authenticate("slack"));
-router.get(
-    "/auth/slack/callback",
-    passport.authenticate("slack", {
-        successRedirect: "/private-page",
-        failureRedirect: "/" // here you would navigate to the classic login page
-    })
-);
-
 module.exports = router;

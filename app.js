@@ -96,32 +96,6 @@ passport.use(
     )
 );
 
-passport.use(
-    new SlackStrategy(
-        {
-            clientID: process.env.CLIENT_ID_SLACK,
-            clientSecret: process.env.CLIENT_SECRET_SLACK,
-            callbackURL: "/auth/slack/callback"
-        },
-        (accessToken, refreshToken, profile, done) => {
-            // to see the structure of the data in received response:
-            //console.log("Slack account details:", profile);
-            User.findOne({ slackID: profile.id })
-                .then(user => {
-                    if (user) {
-                        done(null, user);
-                        return;
-                    }
-                    User.create({ slackID: profile.id })
-                        .then(newUser => {
-                            done(null, newUser);
-                        })
-                        .catch(err => done(err)); // closes User.create()
-                })
-                .catch(err => done(err)); // closes User.findOne()
-        }
-    )
-);
 
 // End Middleware Setup ****************************
 //
