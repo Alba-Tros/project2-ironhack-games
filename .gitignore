@@ -9,3 +9,6 @@ npm-debug.log
 
 # package-lock file
 package-lock.json
+
+# folder for vscode
+.vscode

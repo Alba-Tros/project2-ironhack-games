@@ -17,6 +17,7 @@ const SlackStrategy = require("passport-slack").Strategy;
 
 // User model
 const User = require("./models/user");
+const githubStrategy = require("passport-github").Strategy;
 
 mongoose.Promise = Promise;
 mongoose
@@ -95,7 +96,31 @@ passport.use(
         }
     )
 );
+passport.use(
+    new githubStrategy(
+        {
+            clientID: process.env.CLIENT_ID_GITHUB,
+            clientSecret: process.env.CLIENT_SECRET_GITHUB,
+            callbackURL: "/auth/github/callback"
+        },
+        (accessToken, refreshToken, profile, done) => {
+            User.findOne({ githubID: profile.id })
+                .then(user => {
+                    if (user) {
+                        done(null, user);
+                        return;
+                    }
 
+                    User.create({ githubID: profile.id })
+                        .then(newUser => {
+                            done(null, newUser);
+                        })
+                        .catch(err => done(err)); // closes User.create()
+                })
+                .catch(err => done(err)); // closes User.findOne()
+        }
+    )
+);
 
 // End Middleware Setup ****************************
 //
