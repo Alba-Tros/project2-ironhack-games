@@ -89,6 +89,10 @@ passport.use(
         }
         if (!bcrypt.compareSync(password, user.password)) {
           return next(null, false, { message: "Incorrect password" });
+        }
+        return next(null, user);
+      });
+    }
     )
 );
 passport.use(
@@ -112,12 +116,8 @@ passport.use(
                         })
                         .catch(err => done(err)); // closes User.create()
                 })
-                .catch(err => done(err)); // closes User.findOne()
-        }
-
-        return next(null, user);
-      });
-    }
+                .catch(err => done(err)); // closes User.findOne()   
+          }
   )
 );
 

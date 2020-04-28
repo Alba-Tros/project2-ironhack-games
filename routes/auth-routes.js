@@ -108,7 +108,7 @@ router.get("/auth/github", passport.authenticate("github"));
 router.get(
     "/auth/github/callback",
     passport.authenticate("github", {
-        successRedirect: "/private-page",
+        successRedirect: "/private",
         failureRedirect: "/"
     })
 );
