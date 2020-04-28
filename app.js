@@ -13,11 +13,10 @@ const bcrypt = require("bcrypt");
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 const flash = require("connect-flash");
-const SlackStrategy = require("passport-slack").Strategy;
+const githubStrategy = require("passport-github").Strategy;
 
 // User model
 const User = require("./models/user");
-const githubStrategy = require("passport-github").Strategy;
 
 mongoose.Promise = Promise;
 mongoose
