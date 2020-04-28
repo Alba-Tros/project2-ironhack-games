@@ -89,34 +89,35 @@ passport.use(
         }
         if (!bcrypt.compareSync(password, user.password)) {
           return next(null, false, { message: "Incorrect password" });
-    )
-);
-passport.use(
-    new githubStrategy(
-        {
-            clientID: process.env.CLIENT_ID_GITHUB,
-            clientSecret: process.env.CLIENT_SECRET_GITHUB,
-            callbackURL: "/auth/github/callback"
-        },
-        (accessToken, refreshToken, profile, done) => {
-            User.findOne({ githubID: profile.id })
-                .then(user => {
-                    if (user) {
-                        done(null, user);
-                        return;
-                    }
-
-                    User.create({ githubID: profile.id })
-                        .then(newUser => {
-                            done(null, newUser);
-                        })
-                        .catch(err => done(err)); // closes User.create()
-                })
-                .catch(err => done(err)); // closes User.findOne()
         }
-
         return next(null, user);
       });
+    }
+  )
+);
+
+passport.use(
+  new githubStrategy(
+    {
+      clientID: process.env.CLIENT_ID_GITHUB,
+      clientSecret: process.env.CLIENT_SECRET_GITHUB,
+      callbackURL: "/auth/github/callback",
+    },
+    (accessToken, refreshToken, profile, done) => {
+      User.findOne({ githubID: profile.id })
+        .then((user) => {
+          if (user) {
+            done(null, user);
+            return;
+          }
+
+          User.create({ githubID: profile.id })
+            .then((newUser) => {
+              done(null, newUser);
+            })
+            .catch((err) => done(err)); // closes User.create()
+        })
+        .catch((err) => done(err)); // closes User.findOne()
     }
   )
 );
@@ -140,15 +141,16 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(favicon(path.join(__dirname, "public", "images", "favicon.ico")));
 
 // default value for title local
-app.locals.title = "This Project 2 v2";
+// app.locals.title = "This Project 2 v2";
 
+/*
 const index = require("./routes/index");
-app.use("/", index);
+app.use("/", index); */
 
 const router = require("./routes/auth-routes");
 app.use("/", router);
 
-const gamesRouter = require("./routes/games");
-app.use("/", gamesRouter);
+const index = require("./routes/games");
+app.use("/", index);
 
 module.exports = app;

@@ -106,11 +106,11 @@ router.get("/private", ensureLogin.ensureLoggedIn(), (req, res) => {
 });
 router.get("/auth/github", passport.authenticate("github"));
 router.get(
-    "/auth/github/callback",
-    passport.authenticate("github", {
-        successRedirect: "/private-page",
-        failureRedirect: "/"
-    })
+  "/auth/github/callback",
+  passport.authenticate("github", {
+    successRedirect: "/private",
+    failureRedirect: "/",
+  })
 );
 
 module.exports = router;
