@@ -20,10 +20,13 @@ const User = require("./models/user");
 
 mongoose.Promise = Promise;
 mongoose
-    .connect("mongodb://localhost/project2-ironhackgames", {
-        useNewUrlParser: true,
-        useUnifiedTopology: true
-    })
+    .connect(
+        process.env.MONGODB_URI || "mongodb://localhost/project2-ironhackgames",
+        {
+            useNewUrlParser: true,
+            useUnifiedTopology: true
+        }
+    )
     .then(x => {
         console.log(
             `Connected to Mongo! Database name: "${x.connections[0].name}"`
@@ -118,32 +121,6 @@ passport.use(
                 .catch(err => done(err)); // closes User.findOne()
         }
     )
-);
-
-passport.use(
-  new githubStrategy(
-    {
-      clientID: process.env.CLIENT_ID_GITHUB,
-      clientSecret: process.env.CLIENT_SECRET_GITHUB,
-      callbackURL: "/auth/github/callback",
-    },
-    (accessToken, refreshToken, profile, done) => {
-      User.findOne({ githubID: profile.id })
-        .then((user) => {
-          if (user) {
-            done(null, user);
-            return;
-          }
-
-          User.create({ githubID: profile.id })
-            .then((newUser) => {
-              done(null, newUser);
-            })
-            .catch((err) => done(err)); // closes User.create()
-        })
-        .catch((err) => done(err)); // closes User.findOne()
-    }
-  )
 );
 
 // End Middleware Setup ****************************
