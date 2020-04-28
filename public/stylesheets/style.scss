@@ -10,3 +10,11 @@ footer {
   align-content: center;
   font-size: smaller;
 }
+
+#logout {
+  display: none;
+}
+
+#login , #signup {
+  display: block;
+}

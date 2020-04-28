@@ -76,10 +76,6 @@ router.get("/login", (req, res, next) => {
     res.render("auth/login", { message: req.flash("error") });
 });
 
-router.get("/login", (req, res, next) => {
-    res.render("auth/login", { message: req.flash("error") });
-});
-
 router.post(
     "/login",
     passport.authenticate("local", {
@@ -112,5 +108,11 @@ router.get(
         failureRedirect: "/"
     })
 );
+
+router.get('/get-user', (req, res) => {
+    const user = req.user;
+    console.log(user);
+    return res.status(200).json({loggedInUser: user});
+});
 
 module.exports = router;
