@@ -44,7 +44,7 @@ router.post("/signup", (req, res, next) => {
         .then(user => {
             if (user !== null) {
                 res.render("auth/signup", {
-                    message: "The username already exists"
+                    message: "This username already exists"
                 });
                 return;
             }
@@ -71,9 +71,6 @@ router.post("/signup", (req, res, next) => {
         .catch(error => {
             next(error);
         });
-});
-router.get("/login", (req, res, next) => {
-    res.render("auth/login", { message: req.flash("error") });
 });
 
 router.post(
@@ -108,5 +105,11 @@ router.get(
         failureRedirect: "/"
     })
 );
+
+router.get('/get-user', (req, res) => {
+    const user = req.user;
+    console.log(user);
+    return res.status(200).json({loggedInUser: user});
+});
 
 module.exports = router;

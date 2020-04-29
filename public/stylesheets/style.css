@@ -1,11 +1,46 @@
 body {
-  padding: 50px;
+  margin: 0px;
+  padding: 0px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
 
-a {
-  color: #00b7ff; }
-
 footer {
-  font-size: 9; }
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  font-size: smaller; }
+
+#logout, #my-account {
+  display: none; }
+
+#login, #signup {
+  display: block; }
+
+.form-group {
+  width: 300px; }
+
+.error-message {
+  color: red;
+  font-size: smaller; }
+
+.login-page, .signup-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10vw 0px; }
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto; }
+
+.btn {
+  display: block;
+  width: 100%; }
+
+.index-page {
+  display: flex;
+  flex-direction: column; }
 
 /*# sourceMappingURL=style.css.map */

@@ -13,42 +13,66 @@
 
 <body>
   {{!-- NAVBAR --}}
+  
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Ironhack Games</a>
+  <form class="form-inline my-2 my-lg-0">
+      {{!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> --}}
+      {{!-- <div class="input-group mb-3"> --}}
+        <input type="search" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="button-addon2">
+        <div class="input-group-append">
+          <button class="btn btn-secondary" type="button" id="button-addon2">Search</button>
+        </div>
+      {{!-- </div> --}}
+    </form>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Ironhack Games</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/gameDetail">Games</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Events</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a id="my-account" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          My Account
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item"  href="/private">My Account</a>
+          <a class="dropdown-item"  href="/account-settings">Edit Profile</a>
+          <a class="dropdown-item" href="#">My Games</a>
+          <a class="dropdown-item" href="#">My Favorite Games</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Add a New Game</a>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Games</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            Dropdown
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </li>
-      </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
+          
+        </div>
+      </li>
+    </ul>
+
+    <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+      <div class="btn-group mr-2" role="group" aria-label="First group" id="signup">
+        <a href="/signup"><button type="button" class="btn btn-secondary">Sign Up</button></a>
+      </div>
+      <div class="btn-group mr-2" role="group" aria-label="Second group" id="login">
+        <a href="/login"><button type="button" class="btn btn-outline-light">Login</button></a> 
+      </div>
+      <div class="btn-group mr-2" role="group" aria-label="Second group" id="logout">
+        <a href="/logout"><button type="button" class="btn btn-outline-light">Logout</button></a> 
+      </div>
     </div>
-  </nav>
-  {{!-- NAVBAR END --}}
+
+  </div>
+</nav>
+{{!-- NAVBAR END --}}
 
 
   {{{body}}}
@@ -61,6 +85,8 @@
     <div>Ironhack WebDev Project March/2020 | Webmasters: Marcia Furtado, Sam Benhassine, Benjamin Chimoy </div>
   </footer>
 
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js'></script>
+  <script src="/javascripts/check-if-logged-in.js"></script>
   <script src="/javascripts/script.js"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
