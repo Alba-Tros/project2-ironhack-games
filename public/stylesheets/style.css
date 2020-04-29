@@ -1,15 +1,11 @@
 body {
-  padding: 0px;
-  margin: 0px;
+  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
 
-  footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #29a744;
-    font-size: smaller;
-  }
+a {
+  color: #00b7ff; }
 
+footer {
+  font-size: 9; }
 
 /*# sourceMappingURL=style.css.map */

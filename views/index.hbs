@@ -1,19 +1,10 @@
-{{this.title}}
-
-
-{{#with gamesList}}
-<p>{{title}}</p>
-{{/with}}
-
-{{#each gamesList}}
-{{this.title}}
-{{/each}}
-
-
-<h2>This is where you want to go:</h2>
 <p>
   <button><a href="/private">Your account</a></button>
   <button><a href="/signup">Create account</a></button>
 </p>
 <button><a href="/login">Log In</a></button>
 <button><a href="/auth/github">Login With Github</a></button>
+
+{{#each gamesList}}
+{{>gameCard this}}
+{{/each}}
