@@ -18,7 +18,7 @@ const trimExtension = (fileName) => {
 const storage = cloudinaryStorage({
   cloudinary: cloudinary,
   folder: "ironhack-games", // The name of the folder in cloudinary
-  allowedFormats: ["jpg", "png"],
+  transformation: { height: 500, width: 500, crop: "crop", quality: 50 },
   filename: (req, file, cb) => {
     cb(null, trimExtension(file.originalname)); // The file on cloudinary would have the same name as the original file name, and we trim the extension (because cloudinary appends it on top)
   },
