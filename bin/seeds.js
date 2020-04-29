@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const Game = require("../models/game");
+const Game = require("../models/Game");
 
 mongoose.connect(
     process.env.MONGODB_URI || "mongodb://localhost/project2-ironhackgames",
