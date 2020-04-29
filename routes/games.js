@@ -39,8 +39,8 @@ router.post("/", uploadCloud.single("photo"), (req, res, next) => {
 });
 
 router.get("/", (req, res) => {
-    console.log("games route");
-    console.log("games");
+    //console.log("games route");
+    //console.log("games");
 
     Game.find().then(games => {
         //console.log(games);
@@ -50,10 +50,10 @@ router.get("/", (req, res) => {
 
 router.get("/games/:gamesId", (req, res) => {
     const gamesId = req.params.gamesId;
-    console.log("gamedateail route");
+    //console.log("gamedateail route");
 
     Game.findById(gamesId).then(game => {
-        console.log(game);
+        //console.log(game);
         res.render("gameDetail", { game: game });
     });
 });
