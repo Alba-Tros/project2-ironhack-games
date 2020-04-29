@@ -2,7 +2,10 @@
   <h2 class="index-h2">Welcome to the Games World of Ironhack</h2>
   <p class="index-text">Here you're gonna check out the game projects from your collegues and previous students of the
     Web Development Bootcamp</p>
+<<<<<<< HEAD
 
+=======
+>>>>>>> marcia
 
 
   {{!-- CAROUSEL --}}
@@ -14,21 +17,21 @@
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="..." class="d-block w-100" alt="...">
+        <img src="/images/slider-1.jpg" class="d-block w-100" alt="...">
         <div class="carousel-caption d-none d-md-block">
           <h5>First slide label</h5>
           <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
         </div>
       </div>
       <div class="carousel-item">
-        <img src="..." class="d-block w-100" alt="...">
+        <img src="/images/slider-2.jpg" class="d-block w-100" alt="...">
         <div class="carousel-caption d-none d-md-block">
           <h5>Second slide label</h5>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
       </div>
       <div class="carousel-item">
-        <img src="..." class="d-block w-100" alt="...">
+        <img src="/images/slider-3.jpg" class="d-block w-100" alt="...">
         <div class="carousel-caption d-none d-md-block">
           <h5>Third slide label</h5>
           <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
@@ -47,6 +50,21 @@
   {{!-- CAROUSEL --}}
 </div>
 
+
 {{#each gamesList}}
-{{>gameCard this}}
-{{/each}}
+  {{>gameCard this}}
+  {{/each}}
+
+{{!-- <div class="index-games-list">
+  {{#each gamesList}}
+  <div class="card" style="width: 18rem;">
+    <img src="{{imgPath}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{title}}</h5>
+      <p class="card-text">{{author}}</p>
+      <p class="card-text">{{bootcamp}}</p>
+      <a href="{{gameUrl}}" class="btn btn-dark">Play it!</a>
+    </div>
+  </div>
+  {{/each}}
+</div> --}}

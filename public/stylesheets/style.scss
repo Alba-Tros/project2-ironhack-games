@@ -9,18 +9,21 @@ footer {
   justify-content: center;
   align-content: center;
   font-size: smaller;
+  color: white;
+  background-color: #343a40;
 }
 
-#logout, #my-account {
+#logout,
+#my-account {
   display: none;
 }
 
-#login , #signup {
+#login,
+#signup {
   display: block;
 }
 
 .form-group {
-
   width: 300px;
 }
 
@@ -29,7 +32,8 @@ footer {
   font-size: smaller;
 }
 
-.login-page, .signup-page {
+.login-page,
+.signup-page {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -44,22 +48,40 @@ footer {
   margin: auto;
 }
 
-.btn {
+.btn-login,
+.btn-signup {
   display: block;
   width: 100%;
-  
 }
 
-// a {
-//   text-decoration: none
-// }
-
 .github-btn {
-  
+  text-decoration: none;
+  color: white;
+  width: 10%;
+}
+
+.github-btn:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.index-games-list {
+  display: flex;
+  flex-wrap: wrap;
+  place-content: space-around;
 }
 
 .index-page {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
 }
 
+.index-text {
+  margin-top: 10px;
+}
+
+#main-wrapper {
+  min-height: 90vh;
+}
