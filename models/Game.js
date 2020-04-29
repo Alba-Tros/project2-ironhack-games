@@ -9,10 +9,12 @@ const gameSchema = new Schema(
     author: String,
     bootcamp: String,
     description: String,
-    gameScreenshot: [{ String }],
-    rating: Number,
     imgName: String,
     imgPath: String,
+    owner: {
+      type: Schema.Types.ObjectId,
+      ref: 'User'
+    }
   },
   {
     timestamps: { createdAt: "created_at", updatedAt: "updated_at" },

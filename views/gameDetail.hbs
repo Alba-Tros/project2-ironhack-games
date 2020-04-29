@@ -7,5 +7,12 @@
   <li>Description: {{game.description}}</li>
   <li><img src="{{game.imgPath}}" alt="screenshot"></li>
   <li>Rating: {{game.rating}}</li>
-  <li><a href="">Rate this Game</a></li>
+
+  {{#if user}}
+  <li><a href="/games/edit/{{game._id}}">Edit</a></li>
+  <form id="form" action="/games/delete/{{game._id}}" method="POST">
+    <button type="submit">Delete</button>
+
+  </form>
+  {{/if}}
 </ul>
