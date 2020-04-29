@@ -11,7 +11,7 @@ footer {
   font-size: smaller;
 }
 
-#logout {
+#logout, #my-account {
   display: none;
 }
 
@@ -44,4 +44,16 @@ footer {
   margin: auto;
 }
 
+.btn {
+  display: block;
+  width: 100%;
+  
+}
 
+// a {
+//   text-decoration: none
+// }
+
+.github-btn {
+  
+}
