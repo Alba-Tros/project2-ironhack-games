@@ -39,4 +39,8 @@ footer {
   display: block;
   width: 100%; }
 
+.index-page {
+  display: flex;
+  flex-direction: column; }
+
 /*# sourceMappingURL=style.css.map */
