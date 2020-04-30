@@ -104,7 +104,8 @@ router.post("/", uploadCloud.single("photo"), (req, res, next) => {
       .then((game) => {
         console.log(`Success ${game} was edited!`);
         if (game) {
-          res.redirect(`../${game._id}`);
+          //res.redirect(`../${game._id}`);
+          res.redirect(`/private`);
           return;
         }
         res.redirect(`/`);
