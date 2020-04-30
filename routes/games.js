@@ -36,8 +36,8 @@ router.post(
     const bootcamp = req.body.bootcamp;
     const github = req.body.githubprofile;
     const link = req.body.link;
-    let imgPath = ``;
-    let imgName = ``;
+    let imgPath = req.body.imgPathName;
+    let imgName = req.body.imgNameName;
     if (req.file) {
       imgPath = req.file.url;
       imgName = req.file.originalname;
@@ -60,11 +60,12 @@ router.post(
         console.log(`Success ${game} was edited!`);
         if (game) {
           res.redirect(`../${game._id}`);
+          return;
         }
         res.redirect(`/`);
       })
       .catch((err) => {
-        res.render("private");
+        console.log(err);
       });
   }
 );
@@ -86,8 +87,9 @@ router.post("/", uploadCloud.single("photo"), (req, res, next) => {
   if (req.file) {
     imgPath = req.file.url;
     imgName = req.file.originalname;
-  } else if ((req.file = "")) {
+  } else if (req.file == "") {
     res.redirect(`games/${game._id}`);
+    return;
   }
 
   Game.create({
@@ -106,7 +108,7 @@ router.post("/", uploadCloud.single("photo"), (req, res, next) => {
       res.redirect(`games/${game._id}`);
     })
     .catch((err) => {
-      res.render("something went wrong");
+      console.log(err);
     });
 });
 
