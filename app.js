@@ -9,6 +9,7 @@ const mongoose = require("mongoose");
 const logger = require("morgan");
 const path = require("path");
 const session = require("express-session");
+const MongoStore = require("connect-mongo")(session);
 const bcrypt = require("bcrypt");
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
@@ -54,8 +55,13 @@ app.use(cookieParser());
 app.use(
     session({
         secret: process.env.SESSION_SECRET,
+        cookie: { maxAge: 24 * 60 * 60 * 1000 },
+        saveUninitialized: true,
         resave: true,
-        saveUninitialized: true
+        store: new MongoStore({
+            mongooseConnection: mongoose.connection,
+            ttl: 24 * 60 * 60 * 1000
+        })
     })
 );
 
