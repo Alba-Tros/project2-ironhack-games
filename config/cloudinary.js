@@ -25,7 +25,7 @@ const storage = cloudinaryStorage({
         height: 500,
         width: 500,
         crop: "fill_pad",
-        gravity: "center",
+        gravity: "auto",
         quality: 50
     },
     //transformation: { height: 500, width: 500, crop: "crop", quality: 50 },
