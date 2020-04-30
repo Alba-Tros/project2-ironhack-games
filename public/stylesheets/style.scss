@@ -139,3 +139,12 @@ footer {
 .background-blue {
   background-color: rgb(45, 197, 250);
 }
+
+.game-detail-btns {
+  display: flex;
+}
+
+.game-detail-edit-btn {
+  margin: 0px 30px 0px;
+  width: 5%;
+}

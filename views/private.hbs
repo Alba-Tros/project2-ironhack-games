@@ -2,29 +2,20 @@
   <h1>Welcome, {{user.username}}!</h1>
   <p>This is your private page.</p>
 
-
-  <a href="games/addGame">Upload my Game</a>
-
-
+  <br>
   <div>
+    <h4>Update your information:</h4>
 
-    <h2>Edit your Profile</h1>
-
-      <p>
-        Edit your Name
-      </p>
-
-      <h2>Your Gamecard</h2>
+      <p><a href="#">Edit options</a></p>
+      <br>
+      <h4>Your Uploaded Games:</h4>
 
 
       {{#each gamesList}}
       {{>gameCard this}}
       {{/each}}
-
-      <p>
-        <a href="games/addGame"> Add your Game</a>
-
-      </p>
+      <br>
+      <p><a href="games/addGame">Add a New Game</a></p>
 
   </div>
 

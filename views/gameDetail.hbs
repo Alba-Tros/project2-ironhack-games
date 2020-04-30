@@ -1,18 +1,19 @@
-<h1>{{game.title}}</h1>
+<h3>Game Name: {{game.title}}</h3>
 <ul>
   <!-- Open in a new window-->
-  <li> <a target="_blank" href="{{game.gameUrl}}">Play it!</a></li>
+  <li><a target="_blank" href="{{game.gameUrl}}">Play it!</a></li>
   <li>Author: {{game.author}}</li>
   <li>Bootcamp: {{game.bootcamp}}</li>
   <li>Description: {{game.description}}</li>
   <li><img src="{{game.imgPath}}" alt="screenshot"></li>
   <li>Rating: {{game.rating}}</li>
 
-  {{#if user}}
-  <li><a href="/games/edit/{{game._id}}">Edit</a></li>
-  <form id="form" action="/games/delete/{{game._id}}" method="POST">
-    <button type="submit">Delete</button>
-
-  </form>
-  {{/if}}
+  <div class="game-detail-btns">
+    {{#if user}}
+    <a href="/games/edit/{{game._id}}" class="btn btn-secondary game-detail-edit-btn">Edit</a>
+    <form id="form" action="/games/delete/{{game._id}}" method="POST">
+      <button class="btn btn-secondary" type="submit">Delete</button>
+    </form>
+    {{/if}}
+  </div>
 </ul>
