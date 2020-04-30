@@ -19,7 +19,7 @@ router.post("/games/delete/:gameId", (req, res, next) => {
   Game.findOneAndDelete({ _id: req.params.gameId, owner: req.user._id })
     .then((deletedGame) => {
       console.log(`Success ${deletedGame} was deleted from the database`);
-      res.redirect(`/`);
+      res.redirect(`/private`);
     })
     .catch((err) => {
       next(err);
