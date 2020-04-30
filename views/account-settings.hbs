@@ -6,6 +6,12 @@
       Edit your Name
     </p>
 
+    <h2>Your Gamecard</h2>
+    
+    {{#each gamesList}}
+    {{>gameCard this}}
+    {{/each}}
+
     <p>
       <a href="games/addGame"> Add your Game</a>
 
