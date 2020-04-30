@@ -6,4 +6,3 @@ axios.get('/get-user').then(response => {
     document.getElementById('signup').style.display = 'none';
   }
 });
-
