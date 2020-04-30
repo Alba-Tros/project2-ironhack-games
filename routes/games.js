@@ -36,8 +36,8 @@ router.post(
         const bootcamp = req.body.bootcamp;
         const github = req.body.githubprofile;
         const link = req.body.link;
-        let imgPath = ``;
-        let imgName = ``;
+        let imgPath = req.body.imgPathName;
+        let imgName = req.body.imgNameName;
         if (req.file) {
             imgPath = req.file.url;
             imgName = req.file.originalname;
