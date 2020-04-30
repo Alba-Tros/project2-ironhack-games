@@ -64,7 +64,7 @@ router.post(
         res.redirect(`/`);
       })
       .catch((err) => {
-        res.render("something went wrong");
+        res.render("private");
       });
   }
 );
