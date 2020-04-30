@@ -1,10 +1,31 @@
-{{#if user}}
 <div class="private-page">
   <h1>Welcome, {{user.username}}!</h1>
   <p>This is your private page.</p>
 
- <p>Upload your game <button><a href="games/addGame">here</a></button></p>
-  
-</div>
-{{/if}}
 
+  <a href="games/addGame">Upload my Game</a>
+
+
+  <div>
+
+    <h2>Edit your Profile</h1>
+
+      <p>
+        Edit your Name
+      </p>
+
+      <h2>Your Gamecard</h2>
+
+
+      {{#each gamesList}}
+      {{>gameCard this}}
+      {{/each}}
+
+      <p>
+        <a href="games/addGame"> Add your Game</a>
+
+      </p>
+
+  </div>
+
+</div>
