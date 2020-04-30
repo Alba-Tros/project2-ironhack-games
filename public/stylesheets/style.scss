@@ -48,8 +48,7 @@ footer {
   margin: auto;
 }
 
-.btn-login,
-.btn-signup {
+.btn-login, .btn-signup {
   display: block;
   width: 100%;
 }
@@ -58,6 +57,11 @@ footer {
   text-decoration: none;
   color: white;
   width: 10%;
+  // left: 16px;
+  // position: absolute;
+  // height: 90%;
+  // top: -0.378rem;
+  // height: 140%;
 }
 
 .github-btn:hover {
