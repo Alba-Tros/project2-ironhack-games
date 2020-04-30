@@ -4,13 +4,20 @@
   <p>This are your games.</p>
   <a href="games/addGame">Add a Game</a>
 
-  <div class="index-games-list">
+  <br>
+  <div>
+    <h4>Update your information:</h4>
+
+      <p><a href="#">Edit options</a></p>
+      <br>
+      <h4>Your Uploaded Games:</h4>
 
 
-    {{#each gamesList}}
-    {{>gameCard this}}
-    {{/each}}
-
+      {{#each gamesList}}
+      {{>gameCard this}}
+      {{/each}}
+      <br>
+      <p><a href="games/addGame">Add a New Game</a></p>
 
   </div>
 

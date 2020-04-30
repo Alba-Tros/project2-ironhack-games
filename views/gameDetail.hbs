@@ -1,24 +1,19 @@
-<div class="index-games-list"></div>
+<h3>Game Name: {{game.title}}</h3>
+<ul>
+  <!-- Open in a new window-->
+  <li><a target="_blank" href="{{game.gameUrl}}">Play it!</a></li>
+  <li>Author: {{game.author}}</li>
+  <li>Bootcamp: {{game.bootcamp}}</li>
+  <li>Description: {{game.description}}</li>
+  <li><img src="{{game.imgPath}}" alt="screenshot"></li>
+  <li>Rating: {{game.rating}}</li>
 
-
-<div class="card-distance">
-  <div class="card card-size" style="width: 18rem;">
-    <img src="{{game.imgPath}}" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">{{game.title}}</h5>
-      <p class="card-text">Developed by {{game.author}}</p>
-      <p class="card-text">Bootcamp: {{game.bootcamp}}</p>
-      {{#if user}}
-      <a href="/games/edit/{{game._id}}" class="btn btn-secondary">Edit</a>
-      <form id="form" action="/games/delete/{{game._id}}" method="POST">
-        <button type="submit" class="btn btn-secondary">Delete</button>
-
-      </form>
-      {{/if}}
-
-    </div>
+  <div class="game-detail-btns">
+    {{#if user}}
+    <a href="/games/edit/{{game._id}}" class="btn btn-secondary game-detail-edit-btn">Edit</a>
+    <form id="form" action="/games/delete/{{game._id}}" method="POST">
+      <button class="btn btn-secondary" type="submit">Delete</button>
+    </form>
+    {{/if}}
   </div>
-</div>
-
-
-</div>
+</ul>
