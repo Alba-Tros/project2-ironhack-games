@@ -81,8 +81,8 @@ router.post("/", uploadCloud.single("photo"), (req, res, next) => {
     const bootcamp = req.body.bootcamp;
     const github = req.body.githubprofile;
     const link = req.body.link;
-    let imgPath = ``;
-    let imgName = ``;
+    let imgPath = req.body.imgPathName;
+    let imgName = req.body.imgNameName;
     if (req.file) {
         imgPath = req.file.url;
         imgName = req.file.originalname;
@@ -99,6 +99,7 @@ router.post("/", uploadCloud.single("photo"), (req, res, next) => {
         gitHubUrl: github,
         imgPath: imgPath,
         imgName: imgName,
+<<<<<<< HEAD
         owner: req.user._id
     })
         .then(game => {
@@ -154,6 +155,64 @@ router.post("/", uploadCloud.single("photo"), (req, res, next) => {
                 "something went wrong in creating and entrey in the DB"
             );
         });
+=======
+      }
+    )
+      .then((game) => {
+        console.log(`Success ${game} was edited!`);
+        if (game) {
+          res.redirect(`../${game._id}`);
+          return;
+        }
+        res.redirect(`/`);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+);
+
+router.post("/", uploadCloud.single("photo"), (req, res, next) => {
+  if (!req.isAuthenticated()) {
+    res.redirect("/");
+    return;
+  }
+
+  const title = req.body.title;
+  const author = req.body.author;
+  const description = req.body.description;
+  const bootcamp = req.body.bootcamp;
+  const github = req.body.github;
+  const link = req.body.link;
+  let imgPath = ``;
+  let imgName = ``;
+  if (req.file) {
+    imgPath = req.file.url;
+    imgName = req.file.originalname;
+  } else if (req.file == "") {
+    res.redirect(`games/${game._id}`);
+    return;
+  }
+
+  Game.create({
+    title: title,
+    gameUrl: link,
+    author: author,
+    description: description,
+    bootcamp: bootcamp,
+    gitHubUrl: github,
+    imgPath: imgPath,
+    imgName: imgName,
+    owner: req.user._id,
+  })
+    .then((game) => {
+      console.log(`Success ${game} was added to the database`);
+      res.redirect(`games/${game._id}`);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+>>>>>>> dev
 });
 
 router.get("/", (req, res) => {

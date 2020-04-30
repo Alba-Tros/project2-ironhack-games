@@ -12,10 +12,12 @@ footer {
   color: white;
   background-color: #1f2434; }
 
-#logout, #my-account {
+#logout,
+#my-account {
   display: none; }
 
-#login, #signup {
+#login,
+#signup {
   display: block; }
 
 .form-group {
@@ -25,7 +27,8 @@ footer {
   color: red;
   font-size: smaller; }
 
-.login-page, .signup-page {
+.login-page,
+.signup-page {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -38,7 +41,8 @@ footer {
   padding: 15px;
   margin: auto; }
 
-.btn-login, .btn-signup {
+.btn-login,
+.btn-signup {
   display: block;
   width: 100%; }
 
@@ -107,5 +111,8 @@ footer {
 
 .background-blue {
   background-color: #2dc5fa; }
+
+.hiddenImgValue {
+  display: none; }
 
 /*# sourceMappingURL=style.css.map */
