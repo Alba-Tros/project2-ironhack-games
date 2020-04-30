@@ -99,7 +99,60 @@ router.post("/", uploadCloud.single("photo"), (req, res, next) => {
         gitHubUrl: github,
         imgPath: imgPath,
         imgName: imgName,
+<<<<<<< HEAD
         owner: req.user._id
+=======
+      }
+    )
+      .then((game) => {
+        console.log(`Success ${game} was edited!`);
+        if (game) {
+          res.redirect(`../${game._id}`);
+        }
+        res.redirect(`/`);
+      })
+      .catch((err) => {
+        res.render("private");
+      });
+  }
+);
+
+router.post("/", uploadCloud.single("photo"), (req, res, next) => {
+  if (!req.isAuthenticated()) {
+    res.redirect("/");
+    return;
+  }
+
+  const title = req.body.title;
+  const author = req.body.author;
+  const description = req.body.description;
+  const bootcamp = req.body.bootcamp;
+  const github = req.body.github;
+  const link = req.body.link;
+  let imgPath = ``;
+  let imgName = ``;
+  if (req.file) {
+    imgPath = req.file.url;
+    imgName = req.file.originalname;
+  } else if ((req.file = "")) {
+    res.redirect(`games/${game._id}`);
+  }
+
+  Game.create({
+    title: title,
+    gameUrl: link,
+    author: author,
+    description: description,
+    bootcamp: bootcamp,
+    gitHubUrl: github,
+    imgPath: imgPath,
+    imgName: imgName,
+    owner: req.user._id,
+  })
+    .then((game) => {
+      console.log(`Success ${game} was added to the database`);
+      res.redirect(`games/${game._id}`);
+>>>>>>> 7ba89e2e7a61a446ae4597e6f5f0c36174f0addf
     })
         .then(game => {
             console.log(`Success ${game} was added to the database`);
