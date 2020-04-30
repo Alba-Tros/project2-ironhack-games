@@ -1,4 +1,36 @@
-<div>
+<form id="form" action="/" method="POST" enctype="multipart/form-data" class="form-signin">
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input type="text" name="title" placeholder="The name of your game" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
+    <div class="form-group">
+      <label for="author">Author</label>
+      <input type="text" name="author" placeholder="Your name" class="form-control" id="exampleInputPassword1">
+    </div>
+    <div class="form-group">
+      <label for="Bootcamp">Your Bootcamp</label><br>
+      <input type="text" name="bootcamp" placeholder="Month/Year" class="form-control" id="exampleInputPassword1">
+    </div>
+    <div class="form-group">
+      <label for="github">Github profile</label><br>
+      <input type="text" name="githubprofile " placeholder="Your Github Name" class="form-control" id="exampleInputPassword1">
+    </div>
+    <div class="form-group">
+      <label for="Play link">Play link</label><br>
+      <input type="text" name="link" placeholder="Link to play your game" class="form-control" id="exampleInputPassword1">
+    </div>
+    <div class="form-group">
+      <label for="Screenshot">Screenshot</label>
+      <input type="file" name="photo" class="form-control" id="exampleInputPassword1">
+    </div>
+    <br>
+    <button type="submit" class="btn btn-secondary btn-login" value="save">Add my Game</button>
+  </form>
+
+
+
+
+{{!-- <div>
 
 
   <h2>Add your game</h2>
@@ -48,22 +80,7 @@
 
 
 
-</div>
-{{!-- 
-<form id="form" action="/" method="POST" enctype="multipart/form-data" class="form-signin">
-    <div class="form-group">
-      <label for="username">Username</label>
-      <input type="text" name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-    </div>
-    <div class="form-group">
-      <label for="password">Password</label>
-      <input type="password" class="form-control" id="exampleInputPassword1" name="password">
-    </div>
-    {{#if message}}
-    <div class="error-message">{{message}}</div>
-    {{/if}}
-    <br>
-    <button type="submit" class="btn btn-secondary btn-login">Login</button>
-    <br>
-    <button type="submit" class="btn btn-secondary btn-login"><img class="github-btn" src="/images/github-silhouette.png"><a class="github-btn" href="/auth/github">Sign in with Github</a></button>
-  </form> --}}
+</div> --}}
+
+
+

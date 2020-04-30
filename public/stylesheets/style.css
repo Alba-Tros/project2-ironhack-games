@@ -10,7 +10,7 @@ footer {
   align-items: center;
   font-size: smaller;
   color: white;
-  background-color: #343a40; }
+  background-color: #1f2434; }
 
 #logout, #my-account {
   display: none; }
@@ -50,6 +50,14 @@ footer {
 .github-btn:hover {
   text-decoration: none;
   color: white; }
+
+.btn-secondary:hover {
+  background-color: #1f2434 !important;
+  opacity: 0.7 !important; }
+
+.btn-secondary {
+  background-color: #1f2434 !important;
+  border-color: black !important; }
 
 .index-games-list {
   display: flex;
