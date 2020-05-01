@@ -3,7 +3,7 @@
   {{!-- <button class="btn btn-secondary" type="submit"><a class="game-detail-a" target="_blank" href="{{game.gameUrl}}">Play it!</a></button> --}}
   <ul>
     <!-- Open in a new window-->
-    <button class="btn btn-secondary" type="submit"><a class="game-detail-a" target="_blank" href="{{game.gameUrl}}">Play it!</a></button>
+    {{!-- <button class="btn btn-secondary" type="submit"><a class="game-detail-a" target="_blank" href="{{game.gameUrl}}">Play it!</a></button> --}}
 
     <li>Developed by: {{game.author}}</li>
     <li>Bootcamp: {{game.bootcamp}}</li>
@@ -17,6 +17,7 @@
         <form id="form" action="/games/delete/{{game._id}}" method="POST">
           <button class="btn btn-secondary" type="submit">Delete</button>
         </form>
+        <a href="/private" class="btn btn-secondary game-detail-goback-btn">Go back</a>
       {{/if}}
     </div>
   </ul>
