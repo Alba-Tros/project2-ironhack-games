@@ -1,17 +1,23 @@
 <div class="private-page">
-  <h1>Welcome, {{user.username}}!</h1>
-  <p>This is your private page.</p>
-  <p>This are your games.</p>
-  <a href="games/addGame">Add a Game</a>
-
-  <div class="index-games-list">
+  <h1>Hi {{user.username}}, Welcome To Your Account!</h1>
+  {{!-- <p>This is your private page. Here you can upload your games and update your information.</p> --}}
 
 
-    {{#each gamesList}}
-    {{>gameCard this}}
-    {{/each}}
+  <div>
+    {{!-- <h6>Update your information</h6> --}}
+    {{!-- <p><a href="#">Edit options</a></p> --}}
+    {{!-- <br> --}}
 
+    <br>
+    <h4>List Of Your Uploaded Games:</h4>
+    <p><a href="games/addGame">Upload a New Game</a></p>
+    <br>
+    <div class="private-games-list">
+      {{#each gamesList}}
+        {{>gameCard this}}
+      {{/each}}
+    </div>
+    <br>
 
   </div>
-
 </div>

@@ -10,11 +10,14 @@
     <div class="form-group">
       <label for="Bootcamp">Your Bootcamp</label><br>
       <input type="text" name="bootcamp" placeholder="Month/Year" class="form-control" id="exampleInputPassword1">
+        <small id="passwordHelpInline" class="text-muted">
+            Must be Month in letters, then a / and year 2020. No space in between e.g. March/2020
+        </small>
     </div>
-    <div class="form-group">
-      <label for="github">Github profile</label><br>
-      <input type="text" name="githubprofile " placeholder="Your Github Name" class="form-control" id="exampleInputPassword1">
-    </div>
+    {{!-- <div class="form-group"> --}}
+      {{!-- <label for="github">Github profile</label><br> --}}
+      {{!-- <input type="text" name="githubprofile " placeholder="Your Github Name" class="form-control" id="exampleInputPassword1"> --}}
+    {{!-- </div> --}}
     <div class="form-group">
       <label for="Play link">Play link</label><br>
       <input type="text" name="link" placeholder="Link to play your game" class="form-control" id="exampleInputPassword1">
@@ -22,6 +25,9 @@
     <div class="form-group">
       <label for="Screenshot">Screenshot</label>
       <input type="file" name="photo" class="form-control" id="exampleInputPassword1">
+        <small id="passwordHelpInline" class="text-muted">
+            Must be 500x500 pixels in jpg format. Max 500KB
+        </small>
     </div>
     <br>
     <button type="submit" class="btn btn-secondary btn-login" value="save">Add my Game</button>
@@ -30,58 +36,7 @@
 
 
 
-{{!-- <div>
 
-
-  <h2>Add your game</h2>
-
-  <form id="form" action="/" method="POST" enctype="multipart/form-data">
-    <p>
-      <label for="title">Title</label>
-      <input required type="text" name="title" placeholder="Title">
-    </p>
-    <p>
-      <label for="author">Author</label><br>
-      <input required type="text" name="author " placeholder="Your name">
-
-    </p>
-    <!-- <p>
-      <textarea required for="description" rows="3" cols="80" input type="text"
-        name="description">Description</textarea>
-    </p>
--->
-    <p>
-      <label for="Bootcamp">Your Bootcamp</label><br>
-      <input required type="text" name="bootcamp" placeholder="Month/Year">
-
-    </p>
-
-    <p>
-      <label for="github">Github profile</label><br>
-      <input required type="text" name="githubprofile " placeholder="Your Github Name">
-    </p>
-    <p>
-      <label for="author">Play link</label><br>
-      <input required type="text" name="link" placeholder="Your name">
-    </p>
-
-    <p>
-      <label>Screenshot</label>
-      <input required type="file" name="photo">
-
-    </p>
-    <p>
-      <button type="submit" value="save">Add my Game</button>
-    </p>
-
-
-
-  </form>
-
-
-
-
-</div> --}}
 
 
 

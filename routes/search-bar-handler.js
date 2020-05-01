@@ -35,7 +35,8 @@ router.post("/search-bar-handler", (req, res, next) => {
                         .includes(searchTerms.toLowerCase()))
             );
         });
-        res.render("index", { gamesList: gamesFound });
+        //res.render("index", { gamesList: gamesFound });
+        res.render("searchRez", { gamesList: gamesFound });
     });
 });
 
