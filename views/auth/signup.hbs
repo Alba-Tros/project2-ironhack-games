@@ -11,9 +11,9 @@
       <div class="form-group">
         <label for="password">Password</label>
         <input type="password" class="form-control" id="exampleInputPassword1" name="password">
-        <small id="passwordHelpInline" class="text-muted">
-          Must be at least 8 characters long
-        </small>
+        {{!-- <small id="passwordHelpInline" class="text-muted"> --}}
+          {{!-- Must be at least 8 characters long --}}
+        {{!-- </small> --}}
       </div>
       {{#if message}}
         <div class="error-message">{{message}}</div>
@@ -22,7 +22,7 @@
       <button type="submit" class="btn btn-secondary btn-signup">Create Account</button>
     </form>
     <br>
-    <p class="account-message">
+    <p class="login-link-already-account">
         Do you already have an account?
         <a href="/login">Login</a>
     </p>
