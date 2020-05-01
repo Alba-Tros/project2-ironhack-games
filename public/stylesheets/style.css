@@ -4,7 +4,7 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
 
 footer {
-  height: 3vh;
+  height: 5vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -49,7 +49,14 @@ footer {
 .github-btn {
   text-decoration: none;
   color: white;
-  width: 10%; }
+  width: 10%;
+  margin: 0px 10px 0px; }
+
+.github-btn img {
+  position: relative;
+  left: -20px;
+  top: -1px;
+  margin-right: 22px; }
 
 .github-btn:hover {
   text-decoration: none;
@@ -144,6 +151,18 @@ ul {
   justify-content: space-around; }
 
 .login-link-already-account {
-  margin-top: 1rem; }
+  margin-top: 1rem; 
+}
+
+.game-detail-a {
+  text-decoration: none;
+  color: white; }
+
+.game-detail-a:hover {
+  text-decoration: none;
+  color: white; }
+
+.game-detail-header {
+  margin-bottom: 20px; }
 
 /*# sourceMappingURL=style.css.map */
