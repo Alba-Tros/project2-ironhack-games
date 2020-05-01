@@ -161,4 +161,16 @@ ul {
 .game-detail-header {
   margin-bottom: 20px; }
 
+.game-detail-goback-btn {
+  margin-left: 3px; }
+
+.game-edit-btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-right: 5px; }
+
+.game-edit-play-btn {
+  margin-right: 10px; }
+
 /*# sourceMappingURL=style.css.map */
