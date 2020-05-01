@@ -1,3 +1,21 @@
+{{!-- <div class="card-distance">
+  <div class="card card-size" style="width: 18rem;">
+    <img src="{{this.imgPath}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{this.title}}</h5>
+      <p class="card-text">Developed by {{this.author}}</p>
+      <p class="card-text">Bootcamp: {{this.bootcamp}}</p>
+      <div class="game-edit-btns">
+        <a target="_blank" href="{{this.gameUrl}}" class="btn btn-secondary game-edit-play-btn">Play</a>
+        <a href="games/{{this._id}}" class="btn btn-secondary">Edit</a>
+      </div>
+      
+    </div>
+  </div>
+</div> --}}
+
+
+
 <div class="card-distance">
   <div class="card card-size" style="width: 18rem;">
     <img src="{{this.imgPath}}" class="card-img-top" alt="...">
@@ -5,9 +23,10 @@
       <h5 class="card-title">{{this.title}}</h5>
       <p class="card-text">Developed by {{this.author}}</p>
       <p class="card-text">Bootcamp: {{this.bootcamp}}</p>
-      <a href="games/{{this._id}}" class="btn btn-secondary">EDIT</a>
-
+      <div class="game-edit-btns">
+        <a target="_blank" href="{{this.gameUrl}}" class="btn btn-secondary game-edit-play-btn">Play</a>
+        <a href="games/{{this._id}}" class="btn btn-secondary">Edit</a>
+      </div>
     </div>
   </div>
 </div>
-<div></div>
