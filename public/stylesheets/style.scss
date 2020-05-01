@@ -151,6 +151,33 @@ footer {
 }
 
 .game-detail-edit-btn {
-  margin: 0px 30px 0px;
-  width: 5%;
+  margin-right: 1%;
 }
+
+ul {
+  list-style: none;
+}
+
+.game-detail-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-detail-img {
+  margin: 10px 0px -70px;
+}
+
+.edit-game-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.private-games-list {
+  display: flex;
+  justify-content: space-around;
+}
+
