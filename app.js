@@ -109,7 +109,8 @@ passport.use(
         {
             clientID: process.env.CLIENT_ID_GITHUB,
             clientSecret: process.env.CLIENT_SECRET_GITHUB,
-            callbackURL: "/auth/github/callback"
+            callbackURL:
+                "https://ironhack-games.herokuapp.com/auth/github/callback"
         },
         (accessToken, refreshToken, profile, done) => {
             User.findOne({ githubID: profile.id })
