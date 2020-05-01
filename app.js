@@ -172,4 +172,7 @@ app.use("/", index);
 const searchBarHandler = require("./routes/search-bar-handler");
 app.use("/", searchBarHandler);
 
+const searchRez = require("./routes/searchRez");
+app.use("/", searchRez);
+
 module.exports = app;
