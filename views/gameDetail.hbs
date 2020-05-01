@@ -1,8 +1,10 @@
 <div class="game-detail-page"> 
-  <h3>Name of your Game: {{game.title}}</h3>
+  <h3 class="game-detail-header">Name of your Game: {{game.title}}</h3>
+  {{!-- <button class="btn btn-secondary" type="submit"><a class="game-detail-a" target="_blank" href="{{game.gameUrl}}">Play it!</a></button> --}}
   <ul>
     <!-- Open in a new window-->
-    <li><a target="_blank" href="{{game.gameUrl}}">Play it!</a></li>
+    <button class="btn btn-secondary" type="submit"><a class="game-detail-a" target="_blank" href="{{game.gameUrl}}">Play it!</a></button>
+
     <li>Developed by: {{game.author}}</li>
     <li>Bootcamp: {{game.bootcamp}}</li>
     <div class="game-detail-img">
